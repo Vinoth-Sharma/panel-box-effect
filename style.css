@@ -1,0 +1,107 @@
+h1{
+    text-align: center;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh    ;
+    background: #060c21;
+}
+.container{
+    position: relative;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+    grid-gap: 0px 40px;
+    grid-template-rows: auto;
+}
+.container .box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    position: relative;
+    background: #060c21;
+    border: 1px solid #000;
+    /* cursor: pointer; */
+}
+.container .box::before{
+    position: absolute;
+    content: '';
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    /* background: #fff; */
+    z-index: -1;
+    transform: skew(2deg,2deg);
+    background: linear-gradient(315deg,#ff0057,#e64a19);
+}
+.container .box::after{
+    position: absolute;
+    content: '';
+    top :0;
+    left : 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+.content{
+    position: relative;
+    padding: 20px;
+    transform: translateY(40px)
+}
+.content h2{
+    position: absolute;
+    top: -60px;
+    right:20px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 10em;
+    color: rgba(255,255,255,0.05);
+    transition: 0.5s;
+}
+.box:hover .content h2{
+    top: -140px;
+}
+.content h3{
+    margin: 0 0 10px;
+    padding: 0px;
+    font-size: 24px;
+    color: #fff;
+}
+.content p{
+    margin: 0px;
+    padding: 0px;
+    color: #fff;
+    font-size: 16px;
+}
+.content a{
+    position: relative;
+    margin: 0px;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #fff;
+    transition: 0.5s;
+    transform: translateY(-40px);
+    opacity: 0;
+    visibility: hidden;
+}
+.box:hover .content a{
+    transform: translateY(20px);
+    opacity: 1;
+    visibility: visible;
+}
+.box .content a:hover{
+    color: #000;
+    background: #fff;
+}
+
+
+
+
